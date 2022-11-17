@@ -7,9 +7,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.view.View
+import android.widget.RelativeLayout
 import android.widget.RemoteViews
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.brown.widgets.R
 import com.brown.widgets.helpers.BatteryInfo
+import com.example.shopapp.preference.SharedPref
 
 /**
  * Implementation of Battery Widget functionality.
@@ -46,9 +49,42 @@ class BatteryWidget : AppWidgetProvider() {
 			var level=battery.level
 			var isCharging=battery.isCharging
 
+			var pref: SharedPref? = null
+
+			pref = SharedPref(context)
+
+
+
 
 			val remoteViews = RemoteViews(context.packageName, R.layout.battery_widget)
+
+
+			if(pref.backgroundColor.equals("transparent")){
+
+			}
+			else if(pref.backgroundColor.equals("white")){
+				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_white)
+			}
+			else if(pref.backgroundColor.equals("black")){
+				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_black)
+			}
+			else if(pref.backgroundColor.equals("red")){
+				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_red)
+			}
+			else if(pref.backgroundColor.equals("grey")){
+				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_grey)
+			}
+			else if(pref.backgroundColor.equals("orange")){
+				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_orange)
+			}	else if(pref.backgroundColor.equals("yellow")){
+				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_yellow)
+			}
+
+
+
 			remoteViews.setImageViewResource(R.id.battery_view, R.drawable.battery)
+			//remoteViews.setImageViewResource(R.id.widget_view,R.drawable.bg_rounded_transparent)
+
 			remoteViews.setViewVisibility(
 				R.id.percent100,
 				if (level <= 100 && level > 90) View.VISIBLE else View.INVISIBLE
@@ -97,6 +133,9 @@ class BatteryWidget : AppWidgetProvider() {
 //			val activityIntent = Intent(context, BatteryWidget::class.java)
 //			val pendingIntent = PendingIntent.getActivity(context, 0, activityIntent, 0)
 //			remoteViews.setOnClickPendingIntent(R.id.widget_view, pendingIntent)
+
+
+
 
 
 			val componentName =  ComponentName(context, BatteryWidget::class.java)

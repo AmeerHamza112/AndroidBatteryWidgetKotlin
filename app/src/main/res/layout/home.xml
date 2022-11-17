@@ -86,6 +86,8 @@
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
+
+
 		<ImageView
 				android:background="@drawable/bg_rounded_transparent"
 				android:id="@+id/iv_background"

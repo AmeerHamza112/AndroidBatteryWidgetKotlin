@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-		android:background="@drawable/bg_rounded_white"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+
 		android:id="@+id/widget_view"
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:focusable="true">
+
+
+	<ImageView
+			android:id="@+id/iv_background"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignBottom="@+id/battery_view"
+			android:layout_alignParentTop="true"
+			android:src="@drawable/bg_rounded_white"
+			android:visibility="visible" />
+
 
 	<ImageView
 			android:layout_alignStart="@+id/battery_view"
@@ -160,5 +171,7 @@
 			android:textSize="15sp"
 			android:textStyle="bold"
 			android:typeface="sans"/>
+
+
 
 </RelativeLayout>
