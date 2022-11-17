@@ -15,7 +15,6 @@
 			android:layout_height="wrap_content"
 			android:layout_alignBottom="@+id/battery_view"
 			android:layout_alignParentTop="true"
-			android:src="@drawable/bg_rounded_white"
 			android:visibility="visible" />
 
 

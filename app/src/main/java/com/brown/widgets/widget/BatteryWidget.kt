@@ -48,7 +48,7 @@ class BatteryWidget : AppWidgetProvider() {
 		val remoteViews = RemoteViews(context.packageName, R.layout.battery_widget)
 
 		if(pref.backgroundColor.equals("transparent")){
-
+			remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_transparent)
 		}
 		else if(pref.backgroundColor.equals("white")){
 			remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_white)
@@ -96,27 +96,6 @@ class BatteryWidget : AppWidgetProvider() {
 
 			val remoteViews = RemoteViews(context.packageName, R.layout.battery_widget)
 
-
-			if(pref.backgroundColor.equals("transparent")){
-
-			}
-			else if(pref.backgroundColor.equals("white")){
-				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_white)
-			}
-			else if(pref.backgroundColor.equals("black")){
-				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_black)
-			}
-			else if(pref.backgroundColor.equals("red")){
-				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_red)
-			}
-			else if(pref.backgroundColor.equals("grey")){
-				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_grey)
-			}
-			else if(pref.backgroundColor.equals("orange")){
-				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_orange)
-			}	else if(pref.backgroundColor.equals("yellow")){
-				remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_yellow)
-			}
 
 
 

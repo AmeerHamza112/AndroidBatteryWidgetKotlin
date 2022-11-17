@@ -41,11 +41,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
 
 
-		makeToast = NotifyHelper.toastGenerator(requireContext())
-		manager = context as IManager
 
-		// Get initial status
-		updateView(manager.sendMonitorAction(ManagerAction.MONITORING_CHANGE))
 
 		binding!!.ivTransparent.setOnClickListener(this)
 		binding!!.ivWhite.setOnClickListener(this)
@@ -56,24 +52,58 @@ class HomeFragment : Fragment(), View.OnClickListener {
 		binding!!.ivOrange.setOnClickListener(this)
 		pref = SharedPref(requireContext())
 
-		var s= pref!!.backgroundColor
-		Toast.makeText(requireContext(),s.toString(),Toast.LENGTH_SHORT).show()
+//		var s= pref!!.backgroundColor
+//		Toast.makeText(requireContext(),s.toString(),Toast.LENGTH_SHORT).show()
+
+
+
+		if(pref!!.backgroundColor.equals("transparent")){
+			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_transparent)
+		}
+		else if(pref!!.backgroundColor.equals("white")){
+			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_white)
+		}
+		else if(pref!!.backgroundColor.equals("black")){
+			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_black)
+		}
+		else if(pref!!.backgroundColor.equals("red")){
+			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_black)
+		}
+		else if(pref!!.backgroundColor.equals("grey")){
+			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_grey)
+		}
+		else if(pref!!.backgroundColor.equals("orange")){
+			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_orange)
+		}	else if(pref!!.backgroundColor.equals("yellow")){
+			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_yellow)
+		}
+
+
+
+
 		return  binding!!.root
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
+
+		makeToast = NotifyHelper.toastGenerator(requireContext())
+		manager = context as IManager
+
+		// Get initial status
+		updateView(manager.sendMonitorAction(ManagerAction.MONITORING_CHANGE))
+
 		val toggleButton = view.findViewById<Button>(R.id.ToggleServiceButton)
 		toggleButton.setOnClickListener {
-			makeToast("Toggling monitoring", true)
+		//makeToast("Toggling monitoring", true)
 			updateView(manager.sendMonitorAction(ManagerAction.TOGGLE_MONITORING))
 		}
 	}
 
 	private fun updateView(status: ManagerStatus = ManagerStatus.UNKNOWN) {
 		if (view == null) return
-		makeToast("Updating HomeFragment view.", true)
+		//makeToast("Updating HomeFragment view.", true)
 
 		val toggleButton = requireView().findViewById<Button>(R.id.ToggleServiceButton)
 		when (status) {

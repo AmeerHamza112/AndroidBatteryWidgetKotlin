@@ -18,5 +18,7 @@ class BatteryReceiver : BroadcastReceiver() {
 		manager: AppWidgetManager, id: Int ->
 			BatteryWidget.updateAppWidget(context, manager, id, battery)
 		}
+
+		BatteryWidget.UpdateBackground(context)
 	}
 }
