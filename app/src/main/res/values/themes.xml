@@ -1,7 +1,8 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="ThemeOverlay.MyApplication.AppWidgetContainer" parent="">
+    <style name="ThemeOverlay.MyApplication.AppWidgetContainer" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="appWidgetBackgroundColor">@color/light_blue_600</item>
         <item name="appWidgetTextColor">@color/light_blue_50</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/blue</item>
     </style>
 </resources>

@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), IManager {
 			}
 			ManagerAction.MONITORING_CHANGE -> status
 		}
-		makeToast("New status: $status", true)
+	//	makeToast("New status: $status", true)
 		return status
 	}
 
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), IManager {
 		startMonitoring()
 
 		setContentView(R.layout.activity_main)
-		setSupportActionBar(findViewById(R.id.toolbar))
+
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
