@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Battery Widget</string>
+    <string name="app_name">Battery Widget App</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
 
@@ -17,4 +17,8 @@
     <string name="pause_music">Pause music</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+
+	<string name="widget_background_color">Widget Background Color</string>
+
+
 </resources>

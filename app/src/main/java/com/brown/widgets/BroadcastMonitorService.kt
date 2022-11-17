@@ -7,7 +7,7 @@ import android.content.IntentFilter
 import android.graphics.Color
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.brown.widgets.Receivers.BatteryReceiver
+import com.brown.widgets.receiver.BatteryReceiver
 
 
 class BroadcastMonitorService : Service() {

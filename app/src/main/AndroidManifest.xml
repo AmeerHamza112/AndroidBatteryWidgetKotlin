@@ -18,17 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <receiver android:name=".HomescreenWidgets.GoogleSearchWidget" android:label="Google">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/google_search_widget_info" />
-        </receiver>
         <receiver
-            android:name=".Receivers.BootReceiver"
+            android:name=".receiver.BootReceiver"
             android:enabled="true"
             android:exported="true"
             android:installLocation="internalOnly">
@@ -36,24 +28,14 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver
-            android:name=".HomescreenWidgets.MediaPlayerWidget"
-            android:label="Music">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/media_player_widget_info" />
-        </receiver>
 
         <service
             android:name=".BroadcastMonitorService"
             android:process=":broadcastMonitorProcess" />
 
         <receiver
-            android:name=".HomescreenWidgets.BatteryWidget"
+            android:name=".widget.BatteryWidget"
             android:label="Battery">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -67,17 +49,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/battery_widget_info" />
         </receiver>
-        <receiver
-            android:name=".HomescreenWidgets.ClockWidget"
-            android:label="Clock">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/clock_widget_info" />
-        </receiver>
 
         <activity
             android:name=".MainActivity"
