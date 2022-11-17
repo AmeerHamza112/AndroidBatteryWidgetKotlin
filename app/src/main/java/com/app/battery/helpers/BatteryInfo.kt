@@ -1,4 +1,4 @@
-package com.brown.widgets.helpers
+package com.app.battery.helpers
 
 import android.content.Intent
 import android.os.BatteryManager

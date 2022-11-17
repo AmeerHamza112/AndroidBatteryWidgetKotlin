@@ -1,4 +1,4 @@
-package com.brown.widgets.receiver
+package com.app.battery.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context

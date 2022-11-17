@@ -1,11 +1,11 @@
-package com.brown.widgets.ui.activities
+package com.app.battery.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.brown.widgets.MainActivity
-import com.brown.widgets.R
+import com.app.battery.MainActivity
+import com.app.battery.R
 
 class SplashActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {

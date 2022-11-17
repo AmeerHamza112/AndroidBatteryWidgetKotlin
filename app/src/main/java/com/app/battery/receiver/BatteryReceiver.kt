@@ -1,12 +1,12 @@
-package com.brown.widgets.receiver
+package com.app.battery.receiver
 
 import android.appwidget.AppWidgetManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.brown.widgets.widget.BatteryWidget
-import com.brown.widgets.helpers.BatteryInfo
-import com.brown.widgets.helpers.DataReceiverHelper
+import com.app.battery.widget.BatteryWidget
+import com.app.battery.helpers.BatteryInfo
+import com.app.battery.helpers.DataReceiverHelper
 
 class BatteryReceiver : BroadcastReceiver() {
 	private val TAG = BatteryReceiver::class.simpleName

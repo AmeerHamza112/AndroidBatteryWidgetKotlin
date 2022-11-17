@@ -1,4 +1,4 @@
-package com.brown.widgets.widget
+package com.app.battery.widget
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -7,12 +7,11 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.view.View
-import android.widget.RelativeLayout
 import android.widget.RemoteViews
-import androidx.core.content.ContentProviderCompat.requireContext
-import com.brown.widgets.R
-import com.brown.widgets.helpers.BatteryInfo
-import com.example.shopapp.preference.SharedPref
+import com.app.preference.SharedPref
+import com.app.battery.R
+import com.app.battery.helpers.BatteryInfo
+
 
 /**
  * Implementation of Battery Widget functionality.
@@ -147,39 +146,14 @@ class BatteryWidget : AppWidgetProvider() {
 				if (isCharging) View.VISIBLE else View.INVISIBLE
 			)
 			remoteViews.setTextViewText(R.id.batterytext, "$level%")
-//			val activityIntent = Intent(context, BatteryWidget::class.java)
-//			val pendingIntent = PendingIntent.getActivity(context, 0, activityIntent, 0)
-//			remoteViews.setOnClickPendingIntent(R.id.widget_view, pendingIntent)
-
-
-
-
 
 			val componentName =  ComponentName(context, BatteryWidget::class.java)
 			val appWidgetManager = AppWidgetManager.getInstance(context)
 			appWidgetManager.updateAppWidget(componentName, remoteViews)
 
 
-
-//			// Launch battery settings on touch
-//			val intentToLaunchBatterySettings = Intent(Intent.ACTION_MAIN).apply {
-//				component = ComponentName("com.android.settings", "com.android.settings.Settings\$PowerUsageSummaryActivity")
-//			}
-//			val pendingIntent = PendingIntent.getActivity(context, appWidgetId, intentToLaunchBatterySettings, 0)
-//			views.setOnClickPendingIntent(R.id.Root, pendingIntent)
-//
-//			// Instruct the widget manager to update the widget
-//			appWidgetManager.updateAppWidget(appWidgetId, views)
-
-
 		}
 
-
-
-
-
 	}
-
-
 
 }

@@ -1,4 +1,4 @@
-package com.brown.widgets.receiver
+package com.app.battery.receiver
 
 import android.app.*
 import android.content.Context
@@ -7,8 +7,8 @@ import android.content.IntentFilter
 import android.graphics.Color
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.brown.widgets.MainActivity
-import com.brown.widgets.R
+import com.app.battery.MainActivity
+import com.app.battery.R
 
 
 class BroadcastMonitorService : Service() {

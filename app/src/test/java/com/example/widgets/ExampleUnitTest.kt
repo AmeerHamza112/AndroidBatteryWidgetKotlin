@@ -1,4 +1,4 @@
-package com.brown.widgets
+package com.app.battery
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

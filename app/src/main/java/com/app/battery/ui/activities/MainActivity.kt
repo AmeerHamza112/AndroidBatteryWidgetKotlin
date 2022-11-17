@@ -1,4 +1,4 @@
-package com.brown.widgets
+package com.app.battery
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.brown.widgets.helpers.NotifyHelper
-import com.brown.widgets.receiver.BroadcastMonitorService
+import com.app.battery.helpers.NotifyHelper
+import com.app.battery.receiver.BroadcastMonitorService
 
 enum class ManagerAction {
 	TOGGLE_MONITORING,

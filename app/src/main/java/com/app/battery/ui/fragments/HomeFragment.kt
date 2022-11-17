@@ -1,4 +1,4 @@
-package com.brown.widgets.ui.fragments
+package com.app.battery.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,14 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.brown.widgets.IManager
-import com.brown.widgets.ManagerAction
-import com.brown.widgets.ManagerStatus
-import com.brown.widgets.R
-import com.brown.widgets.databinding.FragmentHomeBinding
-import com.brown.widgets.helpers.NotifyHelper
-import com.brown.widgets.widget.BatteryWidget
-import com.example.shopapp.preference.SharedPref
+import com.app.preference.SharedPref
+import com.app.battery.IManager
+import com.app.battery.ManagerAction
+import com.app.battery.ManagerStatus
+import com.app.battery.R
+import com.app.battery.databinding.FragmentHomeBinding
+import com.app.battery.helpers.NotifyHelper
+import com.app.battery.widget.BatteryWidget
+
 
 
 /**
@@ -37,11 +38,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
 		binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 		binding!!.ivShare.setOnClickListener(this)
-
-
-
-
-
 		binding!!.ivTransparent.setOnClickListener(this)
 		binding!!.ivWhite.setOnClickListener(this)
 		binding!!.ivBlack.setOnClickListener(this)

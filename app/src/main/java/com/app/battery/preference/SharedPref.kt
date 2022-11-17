@@ -1,8 +1,9 @@
-package com.example.shopapp.preference
+package com.app.preference
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.shopapp.constants.Constants
+import com.app.constants.Constants
+
 
 class SharedPref(var _context: Context) {
     var pref: SharedPreferences

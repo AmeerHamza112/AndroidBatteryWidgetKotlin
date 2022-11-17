@@ -1,4 +1,4 @@
-package com.brown.widgets.helpers
+package com.app.battery.helpers
 
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
