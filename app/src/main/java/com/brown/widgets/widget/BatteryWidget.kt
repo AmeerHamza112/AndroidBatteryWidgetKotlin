@@ -37,6 +37,44 @@ class BatteryWidget : AppWidgetProvider() {
 	}
 
 	companion object {
+
+
+
+	fun UpdateBackground(context: Context){
+		var pref: SharedPref? = null
+
+		pref = SharedPref(context)
+
+		val remoteViews = RemoteViews(context.packageName, R.layout.battery_widget)
+
+		if(pref.backgroundColor.equals("transparent")){
+
+		}
+		else if(pref.backgroundColor.equals("white")){
+			remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_white)
+		}
+		else if(pref.backgroundColor.equals("black")){
+			remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_black)
+		}
+		else if(pref.backgroundColor.equals("red")){
+			remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_red)
+		}
+		else if(pref.backgroundColor.equals("grey")){
+			remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_grey)
+		}
+		else if(pref.backgroundColor.equals("orange")){
+			remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_orange)
+		}	else if(pref.backgroundColor.equals("yellow")){
+			remoteViews.setImageViewResource(R.id.iv_background, R.drawable.bg_rounded_yellow)
+		}
+
+		val componentName =  ComponentName(context, BatteryWidget::class.java)
+		val appWidgetManager = AppWidgetManager.getInstance(context)
+		appWidgetManager.updateAppWidget(componentName, remoteViews)
+
+	}
+
+
 		fun updateAppWidget(
 			context: Context,
 			appWidgetManager: AppWidgetManager,
@@ -156,7 +194,13 @@ class BatteryWidget : AppWidgetProvider() {
 
 
 		}
+
+
+
+
+
 	}
+
 
 
 }

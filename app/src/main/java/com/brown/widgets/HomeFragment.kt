@@ -1,6 +1,8 @@
 package com.brown.widgets
 
 import android.appwidget.AppWidgetManager
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +12,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.brown.widgets.databinding.HomeBinding
-import com.brown.widgets.helpers.BatteryInfo
 import com.brown.widgets.helpers.DataReceiverHelper
 import com.brown.widgets.helpers.NotifyHelper
 import com.brown.widgets.widget.BatteryWidget
@@ -126,11 +127,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 		}
 
 
+		BatteryWidget.UpdateBackground(requireContext())
 
-		val battery = BatteryInfo(intent)
-		DataReceiverHelper.updateWidget<BatteryWidget>(requireContext()) {
-				manager: AppWidgetManager, id: Int ->
-			BatteryWidget.updateAppWidget(requireContext(), manager, id,battery )
-		}
 	}
 }
