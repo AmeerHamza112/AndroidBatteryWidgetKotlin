@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/blue"
+		tools:context=".ui.activities.SplashActivity">
+	<ImageView
+			android:id="@+id/imageView"
+			android:layout_width="80dp"
+			android:layout_height="80dp"
+			android:layout_marginTop="272dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.498"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@drawable/ic_app" />
+
+	<TextView
+			android:id="@+id/textView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="12dp"
+			android:text="@string/app_name"
+			android:textColor="@color/white"
+			android:textAllCaps="true"
+			android:fontFamily="@font/roboto_bold"
+			app:layout_constraintEnd_toEndOf="@+id/imageView"
+			app:layout_constraintStart_toStartOf="@+id/imageView"
+			app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+	<com.agrawalsuneet.dotsloader.loaders.LazyLoader
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="14dp"
+			app:layout_constraintEnd_toEndOf="@+id/textView"
+			app:layout_constraintStart_toStartOf="@+id/textView"
+			app:layout_constraintTop_toBottomOf="@+id/textView"
+			app:lazyloader_animDur="800"
+			app:lazyloader_dotsDist="10dp"
+			app:lazyloader_dotsRadius="5dp"
+			app:lazyloader_firstDelayDur="150"
+			app:lazyloader_firstDotColor="@color/white"
+			app:lazyloader_interpolator="@android:anim/decelerate_interpolator"
+			app:lazyloader_secondDelayDur="300"
+			app:lazyloader_secondDotColor="@color/white"
+			app:lazyloader_thirdDotColor="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

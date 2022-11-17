@@ -1,18 +1,17 @@
-package com.brown.widgets
+package com.brown.widgets.ui.fragments
 
-import android.appwidget.AppWidgetManager
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.brown.widgets.databinding.HomeBinding
-import com.brown.widgets.helpers.DataReceiverHelper
+import com.brown.widgets.IManager
+import com.brown.widgets.ManagerAction
+import com.brown.widgets.ManagerStatus
+import com.brown.widgets.R
+import com.brown.widgets.databinding.FragmentHomeBinding
 import com.brown.widgets.helpers.NotifyHelper
 import com.brown.widgets.widget.BatteryWidget
 import com.example.shopapp.preference.SharedPref
@@ -22,7 +21,7 @@ import com.example.shopapp.preference.SharedPref
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class HomeFragment : Fragment(), View.OnClickListener {
-	private var binding: HomeBinding? = null
+	private var binding: FragmentHomeBinding ? = null
 	private val TAG = HomeFragment::class.simpleName
 	private lateinit var makeToast: (String, Boolean) -> Unit
 	private lateinit var manager: IManager
@@ -35,7 +34,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
 		// Inflate the layout for this fragment
 
-		binding = HomeBinding.inflate(inflater, container, false)
+		binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 		binding!!.ivShare.setOnClickListener(this)
 
@@ -121,7 +120,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
 	override fun onClick(v: View?) {
 		var id=v!!.id
-		if(id==R.id.iv_share){
+		if(id== R.id.iv_share){
 
 			val intent = Intent(Intent.ACTION_SEND)
 			intent.putExtra(Intent.EXTRA_TEXT, "Hi i am using Battery Widget App . It is a cool battery widget app . Download App from play store "+
@@ -129,28 +128,28 @@ class HomeFragment : Fragment(), View.OnClickListener {
 			intent.type = "text/plain"
 			startActivity(Intent.createChooser(intent, "Share Via"))
 
-		} else if(id==R.id.iv_transparent){
+		} else if(id== R.id.iv_transparent){
 			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_transparent)
 			pref!!.backgroundColor="transparent"
 
-		} else if(id==R.id.iv_white){
+		} else if(id== R.id.iv_white){
 			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_white)
 			pref!!.backgroundColor="white"
-		} else if(id==R.id.iv_black){
+		} else if(id== R.id.iv_black){
 			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_black)
 			pref!!.backgroundColor="black"
-		} else if(id==R.id.iv_red){
+		} else if(id== R.id.iv_red){
 			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_red)
 			pref!!.backgroundColor="red"
 
-		} else if(id==R.id.iv_yellow){
+		} else if(id== R.id.iv_yellow){
 			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_yellow)
 			pref!!.backgroundColor="yellow"
 
-		} else if(id==R.id.iv_orange){
+		} else if(id== R.id.iv_orange){
 			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_orange)
 			pref!!.backgroundColor="orange"
-		} else if(id==R.id.iv_grey){
+		} else if(id== R.id.iv_grey){
 			binding!!.ivBackground.background =resources.getDrawable(R.drawable.bg_rounded_grey)
 			pref!!.backgroundColor="grey"
 

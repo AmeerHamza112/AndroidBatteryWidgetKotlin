@@ -3,8 +3,6 @@ package com.brown.widgets.receiver
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.brown.widgets.BroadcastMonitorService
-import com.brown.widgets.widget.BatteryWidget
 
 class BootReceiver : BroadcastReceiver() {
 	override fun onReceive(context: Context, intent: Intent) {

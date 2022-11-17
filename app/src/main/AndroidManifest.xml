@@ -1,73 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.brown.widgets">
+		package="com.brown.widgets">
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.INTERNET" />
 
-    <queries>
-        <package android:name="com.spotify.music" />
-    </queries>
+	<queries>
+		<package android:name="com.spotify.music" />
+	</queries>
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/app_logo"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/app_logo"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+	<application
+			android:allowBackup="true"
+			android:icon="@drawable/app_logo"
+			android:label="@string/app_name"
+			android:roundIcon="@drawable/app_logo"
+			android:supportsRtl="true"
+			android:theme="@style/AppTheme">
+		<activity
+				android:name=".ui.activities.SplashActivity"
+				android:exported="true">
 
-        <receiver
-            android:name=".receiver.BootReceiver"
-            android:enabled="true"
-            android:exported="true"
-            android:installLocation="internalOnly">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
 
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+				<data android:scheme="com.brown.widgets" />
 
-        <service
-            android:name=".BroadcastMonitorService"
-            android:process=":broadcastMonitorProcess" />
+				<action android:name="android.intent.action.VIEW" />
+			</intent-filter>
 
-        <receiver
-            android:name=".widget.BatteryWidget"
-            android:label="Battery"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-                <action android:name="android.intent.action.BATTERY_LOW" />
-                <action android:name="android.intent.action.BATTERY_OK" />
-            </intent-filter>
+			<meta-data
+					android:name="android.app.lib_name"
+					android:value="" />
+		</activity>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/battery_widget_info" />
-        </receiver>
+		<receiver
+				android:name=".receiver.BootReceiver"
+				android:enabled="true"
+				android:exported="true"
+				android:installLocation="internalOnly">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
 
+		<service
+				android:name=".receiver.BroadcastMonitorService"
+				android:process=":broadcastMonitorProcess" />
 
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+		<receiver
+				android:name=".widget.BatteryWidget"
+				android:exported="true"
+				android:label="Battery">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+				<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+				<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+				<action android:name="android.intent.action.BATTERY_LOW" />
+				<action android:name="android.intent.action.BATTERY_OK" />
+			</intent-filter>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <data android:scheme="com.brown.widgets" />
+			<meta-data
+					android:name="android.appwidget.provider"
+					android:resource="@xml/battery_widget_info" />
+		</receiver>
 
-                <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
-        </activity>
-    </application>
+		<activity
+				android:name=".MainActivity"
+				android:exported="true"
+				android:label="@string/app_name"
+				android:theme="@style/AppTheme.NoActionBar">
+
+		</activity>
+	</application>
 
 </manifest>

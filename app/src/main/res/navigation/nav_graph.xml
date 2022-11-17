@@ -6,8 +6,8 @@
 	app:startDestination="@id/HomeFragment">
 	<fragment
 		android:id="@+id/HomeFragment"
-		android:name="com.brown.widgets.HomeFragment"
+		android:name="com.brown.widgets.ui.fragments.HomeFragment"
 		android:label="@string/home_label"
-		tools:layout="@layout/home">
+		tools:layout="@layout/fragment_home">
 	</fragment>
 </navigation>

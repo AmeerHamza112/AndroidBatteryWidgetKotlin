@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.brown.widgets.helpers.NotifyHelper
+import com.brown.widgets.receiver.BroadcastMonitorService
 
 enum class ManagerAction {
 	TOGGLE_MONITORING,

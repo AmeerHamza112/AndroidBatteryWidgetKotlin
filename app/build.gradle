@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.brown.widgets"
+        applicationId "com.app.batterywidget"
         minSdkVersion 29
         targetSdkVersion 31
         versionCode 1
@@ -53,4 +53,7 @@ dependencies {
     // For connection to Spotify
 
     implementation "com.google.code.gson:gson:2.8.5"
+
+    implementation 'com.agrawalsuneet.androidlibs:dotsloader:1.4'
+
 }
